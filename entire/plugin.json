@@ -1,0 +1,32 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "entire",
+  "version": "0.2.1",
+  "description": "Use Entire's installed CLI to search recorded work, explain code history, prepare handoffs, and work with Trails and project memory.",
+  "author": { "name": "Vibe Code", "url": "https://vcode.sh" },
+  "homepage": "https://docs.entire.com/",
+  "license": "MIT",
+  "keywords": ["entire", "checkpoints", "sessions", "trails", "code-history", "handoff", "memory"],
+  "extensions": {
+    "com.openai": {
+      "requires_local_executor": true,
+      "interface": {
+        "displayName": "Entire",
+        "shortDescription": "Code history and agent context",
+        "longDescription": "An independent community integration for Entire, for any selected Git checkout. Seven read-only MCP tools search recorded work, inspect sessions and checkpoints, explain file provenance, and read Trails using an explicit checkout path. Fourteen skills turn history into playbooks, explain decisions, replay or teach a feature, prepare handoffs, review changes, address findings, link missed sessions, and draft reusable skills. Optional Brain and Graph workflows use those separately installed CLI plugins. The dependency-free Python adapter checks installed Entire help and executes bounded CLI reads without a shell. Broader authorized operations remain CLI workflows. Requires Python 3.10 or newer as python3, Git, and Entire on the execution host's PATH; hosted features require existing Entire access. Session capture uses Entire's own hooks. This plugin does not install software, authenticate, or enable repositories automatically and is not published by Entire.",
+        "developerName": "Vibe Code",
+        "category": "Developer Tools",
+        "capabilities": ["Read", "Write"],
+        "logo": "./assets/entire.png",
+        "composerIcon": "./assets/entire.png",
+        "logoDark": "./assets/entire-dark.png",
+        "composerIconDark": "./assets/entire-dark.png",
+        "defaultPrompt": [
+          "Search Entire for previous work related to this task.",
+          "Explain the recorded intent behind this code.",
+          "Prepare an Entire session handoff and list the next steps."
+        ]
+      }
+    }
+  }
+}
